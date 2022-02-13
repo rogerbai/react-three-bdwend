@@ -1,7 +1,7 @@
 
 import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { Environment, Stage, PresentationControls } from '@react-three/drei'
+import { Environment, PresentationControls } from '@react-three/drei'
 import Model from './Bdwendwen'
 
 
