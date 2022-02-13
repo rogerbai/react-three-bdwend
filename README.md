@@ -6,7 +6,7 @@
 ## 演示效果
 _在线演示地址[Live Example]: https://bingdwendwen.vercel.app/_
 
-<!-- ![demo](./public/images/bdd.gif) -->
+![demo](./public/images/bdd.gif)
 
 # 实现说明
 
@@ -22,7 +22,7 @@ WebGL是OpenGL的前端实现，Three.js是WebGL的进一步封装，react-three
 ## Three.js基本结构
 为了简单起见，程序采用 `React-three-filer/drei + Three.js + vercel` 的方式实现，涉及到的Three.js基本构造如下图所示，
 
-<!-- ![Three.js结构](https://img-blog.csdnimg.cn/202009072107529.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3RvbnlkejA1MjM=,size_16,color_FFFFFF,t_70#pic_center) -->
+![Three.js结构](https://img-blog.csdnimg.cn/202009072107529.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3RvbnlkejA1MjM=,size_16,color_FFFFFF,t_70#pic_center)
 
 ## 3D结构模型
 可下载冰墩墩的3D模型的网址
@@ -97,7 +97,6 @@ useGLTF.preload('/model.gltf')
     2. 模型导入时，一般是黑色的。需要添加灯光，常见的灯光有环境光、平行光、点光源。平行光类似于太阳光，可以投射阴影。
 
 
-
 前面生成的jsx组件可以直接放置到页面scene里面去，使用react-three/drei中的Loader组件，加载模型展示。这个过程是异步完成，所以这里采用<Suspense>，可以完整控制加载过程的loading-fallbacks和error handling.
 
 @react-three/drei 网址：
@@ -116,7 +115,7 @@ function App() {
       </Suspense>
 ```
 
-> 注意： 模型的外壳的透明塑料质感，可以通过修改模型的透明度、金属度、粗糙度等材质参数实现，具体参数参加项目代码中的src\Bdwendwen.js相关部分，可以根据个人喜好做不同的调整。
+> 注意： 模型的外壳的透明塑料质感，可以通过修改模型的透明度、金属度、粗糙度等材质参数实现，具体参数参加项目代码中的src\Bdwendwen.js相关部分，可以根据个人喜好做不同的调整。 模型相关操作可参照[dragonir](https://github.com/dragonir/3d/tree/master/src/containers/Olympic)的作品. 
 
 ## 开发测试
 
