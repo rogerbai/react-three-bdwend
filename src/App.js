@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import { Suspense } from 'react'
+import { Canvas } from '@react-three/fiber'
+import { Environment, Stage, PresentationControls } from '@react-three/drei'
+import Model from './Bdwendwen'
+
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Canvas dpr={[1, 2]} shadows camera={{ fov: 45 }}>
+      {/* <color attach="background" args={['#101010']} /> */}
+      {/* <fog attach="fog" args={['#101010', 10, 20]} /> */}
+      <pointLight position={[-6, 6, 6]} />
+      <Suspense fallback={null} >
+        <Environment path="/cube" />
+        <PresentationControls speed={1.5} global zoom={1.5} polar={[-0.1, Math.PI / 2]} rotation={[0.4, 0, 0]}>
+          <Suspense fallback={null} castshadow>
+            <Model position={[0, -1.2,0]} scale={[5,5,5]} />
+          </Suspense>
+        </PresentationControls>
+      </Suspense>
+    </Canvas>
+  )
 }
-
-export default App;
